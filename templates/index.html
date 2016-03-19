@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %} Docktweet {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="{{ url_for('bower.static', filename='jquery/dist/jquery.js') }}"></script>
+</head>
+<body>
+    {% block content %}
+        <h1>Docktweet Project. An easy docker container to get info from anny twitter account</h1>
+        <div class='container'
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+         </form>
+    {% endblock %}
+</body>
+</html>
