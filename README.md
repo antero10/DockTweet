@@ -1,5 +1,7 @@
 # DockTweet
-Docker app is to get tweets from a certain account. Saved in a .csv file
+Docker app is to get tweets from a certain account. Saved in a .csv file.
+
+## [Dockerhub](https://hub.docker.com/r/antero/docktweet/)
 
 <p align="center">
   <img src="https://media.giphy.com/media/xThuVYHFQbZvAQU22Y/giphy.gif" width="350"/>
@@ -18,10 +20,13 @@ Build docker `docker build -t docktweet .`
 A simple way just run `docker run -d  --name dockertweet docktweet -p HOST_PORT:80` 
 
 ## Environment Variables
-    * `-e TWITTER_CONSUMER_KEY` app consumer key provided by twitter
-    * `-e TWITTER_CONSUMER_SECRET` app consumer secret  key provided by twitter
-    * `-e TWITTER_ACCESS_TOKEN` app access token key provided by twitter
-    * `-e TWITTER_ACCESS_TOKEN_SECRET` app access token secret provided by twitter
+
+This docker need to provide some enviroment variables to be used by any account:
+
+* `-e TWITTER_CONSUMER_KEY` app consumer key provided by twitter
+* `-e TWITTER_CONSUMER_SECRET` app consumer secret  key provided by twitter
+* `-e TWITTER_ACCESS_TOKEN` app access token key provided by twitter
+* `-e TWITTER_ACCESS_TOKEN_SECRET` app access token secret provided by twitter
 
 # 4 Enter web interface
 
