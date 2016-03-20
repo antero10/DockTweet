@@ -2,7 +2,7 @@
 Docker app is to get tweets from a certain account. Saved in a .csv file
 
 <p align="center">
-  <img src="http://giphy.com/gifs/docktweet-xThuVYHFQbZvAQU22Y" width="350"/>
+  <img src="https://media.giphy.com/media/xThuVYHFQbZvAQU22Y/giphy.gif" width="350"/>
 </p>
 
 # Instructions 
