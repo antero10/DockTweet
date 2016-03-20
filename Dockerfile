@@ -15,6 +15,9 @@ RUN pip install Flask
 # Install jinja2
 RUN pip install Jinja2
 
+# Install flask boostrap
+RUN pip install flask-bootstrap
+
 COPY ./ /app
 
 WORKDIR /app

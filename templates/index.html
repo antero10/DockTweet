@@ -1,20 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% block title %} Docktweet {% endblock %}
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <script src="{{ url_for('bower.static', filename='jquery/dist/jquery.js') }}"></script>
-</head>
-<body>
-    {% block content %}
-        <h1>Docktweet Project. An easy docker container to get info from anny twitter account</h1>
-        <div class='container'
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+{%- extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <form class="form" method="POST" action="{{ url_for('tweets') }}">
+        <div class="row">
+            <div class="col-sm-12">
+                <label>Search Twitter Account</label>
             </div>
-         </form>
-    {% endblock %}
-</body>
-</html>
+            <div class="col-sm-12">
+                <input class="form-control" name="twitter_account" type="text"
+                       placeholder="@Twitter Account" required="required"/>
+                <input class="form-control" name="twitter_ammount" type="number"
+                       placeholder="Amount of tweets" required="required"/>
+
+
+                <button type="submit" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span>
+                </button>
+
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>File name</th>
+        </tr>
+        {% for file in files %}
+        <tr>
+
+            <td>{{ file.name }}</td>
+            <td><a   href="{{ url_for('download',filename=file.name )}}" ><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
