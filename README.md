@@ -1,5 +1,5 @@
 # DockTweet
-Docker app is to get tweets from a certain account. Saved in a .csv file.
+Docker app allows you to export user's tweets into a CSV file.
 
 ## [Dockerhub](https://hub.docker.com/r/antero/docktweet/)
 
@@ -9,11 +9,11 @@ Docker app is to get tweets from a certain account. Saved in a .csv file.
 
 # Instructions 
 
-# 1 Create twitter app
+# 1 Create a twitter app
 To use this docker you need to create an app on [Twitter](https://apps.twitter.com/) to provide app key
 
-# 2 Build docker 
-Build docker `docker build -t docktweet .`
+# 2 Pull Image 
+`docker pull antero/docktweet`
 
 # 3 Run docker
 
@@ -27,6 +27,8 @@ This docker need to provide some enviroment variables to be used by any account:
 * `-e TWITTER_CONSUMER_SECRET` app consumer secret  key provided by twitter
 * `-e TWITTER_ACCESS_TOKEN` app access token key provided by twitter
 * `-e TWITTER_ACCESS_TOKEN_SECRET` app access token secret provided by twitter
+* `-e APP_PORT` define port for app ex: `80`
+* `-e APP_HOST` define host for app ex: `0.0.0.0` (localhost)
 
 # 4 Enter web interface
 
