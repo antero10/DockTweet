@@ -1,0 +1,41 @@
+{%- extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <form class="form" method="POST" action="{{ url_for('tweets') }}">
+        <div class="row">
+            <div class="col-sm-12">
+                <label>Search Twitter Account</label>
+            </div>
+            <div class="col-sm-12">
+                <input class="form-control" name="twitter_account" type="text"
+                       placeholder="@Twitter Account" required="required"/>
+                <input class="form-control" name="twitter_ammount" type="number"
+                       placeholder="Amount of tweets" required="required"/>
+
+
+                <button type="submit" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span>
+                </button>
+
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>File name</th>
+        </tr>
+        {% for file in files %}
+        <tr>
+
+            <td>{{ file.name }}</td>
+            <td><a   href="{{ url_for('download',filename=file.name )}}" ><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
